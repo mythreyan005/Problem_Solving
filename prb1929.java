@@ -1,13 +1,16 @@
+import java.util.Arrays;
 class Solution {
     public int[] getConcatenation(int[] nums) {
-        int n = nums.length;
-        int[] nums2 = new int[2 * n];
-
-        for (int i = 0; i < n; i++) {
-            nums2[i] = nums[i];        
-            nums2[i + n] = nums[i];    
+        int n=nums.length*2;
+        int ans[]=new int[n];
+        for(int i=0;i<n/2;i++){
+            ans[i]=nums[i];
         }
+        for(int i=n/2;i<n;i++){
+            ans[i]=nums[i-(n/2)];
+        }
+        return ans;
 
-        return nums2;
+        
     }
 }
